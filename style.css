@@ -1,0 +1,186 @@
+/* Paleta de cores místicas */
+body {
+    background-color: #f2e9d1;
+    font-family: 'Segoe UI', sans-serif;
+    color: #5b3920;
+    text-align: center;
+    padding: 40px;
+    background: url('https://example.com/fundo-mistico.gif') no-repeat center center fixed;
+    background-size: cover;
+    animation: backgroundAnimation 15s infinite alternate ease-in-out;
+}
+
+/* Animação suave de fundo */
+@keyframes backgroundAnimation {
+    0% { background-color: #f2e9d1; }
+    50% { background-color: #e4d8c7; }
+    100% { background-color: #f2e9d1; }
+}
+
+/* Título */
+h1 {
+    color: #4a2c28;
+    margin-bottom: 10px;
+    font-size: 50px;
+    text-shadow: 2px 2px 8px rgba(255, 223, 186, 0.6);
+}
+
+.titulo-icon {
+    width: 70px;
+    height: auto;
+    margin-right: -3px;
+    vertical-align: middle;
+    display: inline-block;
+    filter: drop-shadow(0 0 2px rgba(255, 223, 186, 0.6));
+    animation: pulse 3s infinite ease-in-out;
+    position: relative;
+    top: -10px;
+
+}
+
+/* Container principal */
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f4f1e1;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(90, 40, 30, 0.1);
+}
+
+/* Inputs e Botões */
+input, button {
+    padding: 14px;
+    font-size: 18px;
+    margin: 12px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+}
+
+input {
+    width: 80%;
+}
+
+button {
+    background-color: #9f9f71;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #7f7f53;
+    transform: scale(1.05);
+}
+
+/* Estilo dos botões de intervalo */
+.buttons-container, .intervalo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+}
+
+/* Container de registros */
+.registros {
+    margin-top: 30px;
+    text-align: left;
+    background-color: #e4d8c7;
+    padding: 25px;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(90, 40, 30, 0.1);
+}
+
+/* Estilo dos registros */
+.registro {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Mensagens de erro */
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+/* Pop-up de sucesso */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup button {
+    background-color: #9f9f71;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup button:hover {
+    background-color: #7f7f53;
+}
+
+/* Estilo do container de configurações */
+.configuracoes-container select {
+    padding: 14px;
+    font-size: 18px;
+    margin: 12px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    width: 80%;
+}
+
+/* Layout Flex para botões de configurações */
+.configuracoes-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.configuracoes-buttons button {
+    width: 100%;
+    max-width: 350px;
+    padding: 16px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Estilo do filtro de busca para chefe */
+#filtro-container {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f5ea;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+#filtro-container input {
+    width: 90%;
+    font-size: 16px;
+    padding: 10px;
+}

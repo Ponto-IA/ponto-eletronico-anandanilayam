@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ananda Nilayam - Registro de Ponto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>
+    <img src="img/lotus (2).png" alt="Yoga" class="titulo-icon">
+    Ananda Nilayam
+  </h1>
+
+  <div class="container">
+
+    <!-- Container de Login -->
+    <div class="login-container" id="login-container">
+      <h2>Registro de ponto eletrônico</h2>
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Nome de usuário">
+      <input type="password" id="password" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+      <p id="login-message" class="error-message"></p>
+      <button onclick="mostrarCadastro()">Cadastre-se</button>
+    </div>
+
+    <!-- Container de Cadastro -->
+    <div class="cadastro-container" id="cadastro-container" style="display: none;">
+      <h2>Cadastro de Usuário</h2>
+      <input type="text" id="novo-username" placeholder="Novo nome de usuário">
+      <input type="password" id="novo-password" placeholder="Nova senha">
+      <button onclick="cadastrar()">Cadastrar</button>
+      <button onclick="voltarLogin()">Voltar ao Login</button>
+      <p id="cadastro-message" class="error-message"></p>
+    </div>
+
+    <!-- Container de Registro de Ponto -->
+    <div class="registro-container" id="registro-container" style="display: none;">
+      <input type="text" id="nome" placeholder="Digite seu nome" disabled>
+
+      <div class="buttons-container">
+        <button onclick="registrar('entrada')">Registrar Entrada</button>
+        <button onclick="registrar('saida')">Registrar Saída</button>
+      </div>
+
+      <div class="intervalo-container">
+        <h3>Intervalo de Almoço</h3>
+        <button onclick="registrar('inicio_almoco')">Iniciar Almoço</button>
+        <button onclick="registrar('fim_almoco')">Finalizar Almoço</button>
+      </div>
+
+      <!-- Campo de Filtro apenas para Chefe -->
+      <div id="filtro-container" style="display: none;">
+        <label for="filtro-nome">Buscar usuário:</label>
+        <input type="text" id="filtro-nome" placeholder="Digite um nome..." oninput="filtrarRegistros()">
+      </div>
+
+      <div class="registros" id="registros">
+        <h3>Registros de Hoje:</h3>
+      </div>
+
+      <button onclick="mostrarConfiguracoes()">Configurações</button>
+      <button onclick="logout()">Sair</button>
+    </div>
+
+    <!-- Container de Configurações -->
+    <div class="configuracoes-container" id="configuracoes-container" style="display: none;">
+      <h2>Configurações</h2>
+      <p>Alterar nome de usuário e senha:</p>
+      <input type="text" id="novo-username-config" placeholder="Novo nome de usuário">
+      <input type="password" id="novo-password-config" placeholder="Nova senha">
+      <div class="configuracoes-buttons">
+        <button onclick="salvarConfiguracoes()" class="configuracao-btn">Salvar Alterações</button>
+        <button onclick="voltarRegistro()" class="configuracao-btn">Voltar para o Registro</button>
+      </div>
+      <p id="configuracao-message" class="error-message"></p>
+      <div id="chefe-button" style="display: none;">
+        <button onclick="gerenciarUsuarios()">Gerenciar Usuários</button>
+        <button onclick="mostrarExportacao()">Exportar Dados</button>
+      </div>
+    </div>
+
+    <!-- Tela de Gerenciamento de Usuários -->
+    <div id="gerenciar-usuarios" style="display: none;">
+      <h3>Lista de Usuários</h3>
+      <ul id="usuarios-lista"></ul>
+      <button onclick="voltarConfiguracoes()">Voltar</button>
+    </div>
+
+    <!-- Tela de Exportação de Dados -->
+    <div id="exportacao-container" style="display: none;">
+      <h3>Exportar Dados de Funcionário</h3>
+      <label for="usuario-exportacao">Selecione o usuário:</label>
+      <select id="usuario-exportacao">
+        <option value="todos">Todos</option>
+      </select>
+      <button onclick="exportarDados()">Exportar</button>
+      <button onclick="voltarConfiguracoes()">Voltar</button>
+    </div>
+
+  </div>
+
+  <!-- Pop-up de sucesso -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Ponto registrado com sucesso! 🧘‍♀️</p>
+      <button onclick="fecharPopup()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
